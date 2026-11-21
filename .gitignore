@@ -1,15 +1,19 @@
-# Exclure l'environnement virtuel
+# Environnement virtuel & packages
 .venv/
 __pycache__/
 *.pyc
 
-# Exclure les cles et variables d'environnement
+# Cles d'API & secrets
 .env
 .env.*
 
-# Exclure le cache des checkpoints Jupyter
-.ipynb_checkpoints/
+# Fichiers de consignes & TP Word
+*.docx
+*.doc
 
-# Exclure les fichiers temporaires
+# Fichiers temporaires & scripts scratch
 scratch/
 *.log
+
+# Checkpoints Jupyter
+.ipynb_checkpoints/

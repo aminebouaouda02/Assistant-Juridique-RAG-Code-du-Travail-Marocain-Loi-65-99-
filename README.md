@@ -5,6 +5,12 @@ Ce projet implémente un système complet de **Retrieval-Augmented Generation (R
 
 ---
 
+## 📸 Aperçu de l'Interface Utilisateur (Streamlit)
+
+![Interface Streamlit de l'Assistant RAG Juridique](assets/demo_streamlit.png)
+
+---
+
 ## 🏛️ Architecture du Projet
 
 ```
@@ -15,8 +21,10 @@ Ce projet implémente un système complet de **Retrieval-Augmented Generation (R
 ├── data/
 │   └── code_travail_Fr.pdf                  # PDF officiel du Code du travail (Secrétariat Général du Gouvernement)
 ├── chroma_db_code_travail/                  # Base de données vectorielle ChromaDB persistante
+├── assets/
+│   └── demo_streamlit.png                   # Capture d'écran de l'application
 ├── .env.example                             # Exemple de configuration des clés API
-└── requirements.txt                         # Liste des dépendances du projet
+└── requirements.txt                         # Liste complète des dépendances
 ```
 
 ---
@@ -24,9 +32,9 @@ Ce projet implémente un système complet de **Retrieval-Augmented Generation (R
 ## 🚀 Fonctionnalités Clés
 1. **Pipeline d'ingestion & Chunking Structurel** : Découpage sémantique par **Article de loi** (`Document` enrichi de métadonnées : numéro d'article, source et page).
 2. **Embeddings & Vectorstore** : Embeddings locaux optimisés ONNX (`all-MiniLM-L6-v2`) couplés à **ChromaDB**.
-3. **Génération Contrôlée (Groq)** : Utilisation de `qwen/qwen3.8-27b` via Groq pour des réponses ultra-rapides et rigoureuses.
-4. **Anti-hallucination & Honnêteté** : Le prompt force le LLM à citer l'article source et à refuser explicitement de répondre lorsque la question est hors-domaine.
-5. **Évaluation RAGAS** : Mesure sur un Golden Set des 4 métriques : *Faithfulness*, *Answer Relevance*, *Context Precision*, *Context Recall*.
+3. **Génération Contrôlée (Groq)** : Utilisation de `qwen/qwen3.8-27b` via Groq pour des réponses ultra-rapides, précises et fidèles.
+4. **Anti-hallucination & Citations** : Le prompt force le LLM à citer l'article source (`Selon l'Article 14...`) et à refuser explicitement de répondre lorsque la question est hors-domaine.
+5. **Évaluation RAGAS** : Mesure sur un Golden Set des métriques clés (*Faithfulness*, *Answer Relevance*, *Context Precision*, *Context Recall*).
 
 ---
 
@@ -60,7 +68,7 @@ GROQ_API_KEY="votre_cle_groq"
 ```bash
 streamlit run app.py
 ```
-Ouvre une interface web moderne avec historique de conversation et affichage des extraits d'articles sources.
+Ouvre une interface web moderne avec test de questions en direct et affichage des articles sources.
 
 ### Option B : API REST (FastAPI)
 ```bash

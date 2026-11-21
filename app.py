@@ -93,7 +93,7 @@ with col1:
         st.subheader("💡 Réponse de l'Assistant :")
         st.write(answer)
 
-        with st.expander("📚 Voir les extraits d'articles sources récupérés :"):
+        with st.expander("📚 Voir les extraits d    'articles sources récupérés :"):
             for d in retrieved_docs:
                 st.markdown(f"**{d.metadata.get('article')}** (Page {d.metadata.get('page')})")
                 st.text(d.page_content)
