@@ -1,0 +1,15 @@
+# Exclure l'environnement virtuel
+.venv/
+__pycache__/
+*.pyc
+
+# Exclure les cles et variables d'environnement
+.env
+.env.*
+
+# Exclure le cache des checkpoints Jupyter
+.ipynb_checkpoints/
+
+# Exclure les fichiers temporaires
+scratch/
+*.log
